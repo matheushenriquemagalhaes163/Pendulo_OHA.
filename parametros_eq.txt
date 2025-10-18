@@ -1,1 +1,6 @@
-
+A = -0.08147 m
+b = 0.00094 kg/s
+w = 4.02604 rad/s
+phi = -56.38726 rad
+Frequência teórica w0 = 4.18543 rad/s
+Fator de qualidade Q = 4270.72829
