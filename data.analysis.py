@@ -5,7 +5,7 @@ from scipy.optimize import curve_fit
 
 
 # ==============================
-# ⚙️ DEFINIÇÕES E AJUSTES
+#  DEFINIÇÕES E AJUSTES
 # ==============================
 
 
@@ -22,7 +22,7 @@ def oha(t, A, b, w, p):
 
 
 # ==============================
-# 📂 LEITURA DOS DADOS EXPERIMENTAIS
+#  LEITURA DOS DADOS EXPERIMENTAIS
 # ==============================
 data = pandas.read_csv('dados.csv', header=None)
 t = data[0]  # tempo (s)
@@ -36,14 +36,14 @@ x_centralizado = x - x.mean()
 
 
 # ==============================
-# 📈 AJUSTE DE CURVA
+#  AJUSTE DE CURVA
 # ==============================
 # curve_fit encontra os parâmetros ideais A, b, w e p
 popt, pcov = curve_fit(oha, t, x_centralizado)
 
 
 # ==============================
-# 📊 GRÁFICO
+#  GRÁFICO
 # ==============================
 fig, ax = pyplot.subplots(figsize=(10, 7))
 
@@ -62,7 +62,7 @@ pyplot.grid(True)
 
 
 # ==============================
-# 🧮 CÁLCULOS COMPLEMENTARES
+#  CÁLCULOS COMPLEMENTARES
 # ==============================
 A, b, w, p = popt
 w0 = numpy.sqrt(w**2 + (b / (2*MASSA))**2)  # frequência natural não amortecida
@@ -70,7 +70,7 @@ Q = 1 / (1 - numpy.exp(-2*b*2*numpy.pi / w))  # fator de qualidade estimado
 
 
 # ==============================
-# 💾 SALVA RESULTADOS
+#  SALVA RESULTADOS
 # ==============================
 with open('parametros_eq.txt', 'w', encoding='utf-8') as par:
     par.write(f"A = {A}\n")
