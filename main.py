@@ -1,8 +1,3 @@
-# This code is based on YouTube tutorials and it's part of a physics project.
-# Main Subject: Harmonic Oscillations
-# Purpose: Tracking and getting data from a simple pendulum recording and then finding
-#          this particular pendulum equation
-
 import cv2
 import csv
 
